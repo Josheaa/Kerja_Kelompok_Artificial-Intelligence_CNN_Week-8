@@ -106,8 +106,7 @@ if img is None:
     st.info("Upload gambar dulu untuk melihat hasil prediksi.")
 else:
     st.image(img, use_container_width=True)
-    with st.spinner("Memprediksi..."):
-        prob = model.predict(siapkan_gambar(img), verbose=0)[0]
+    prob = model.predict(siapkan_gambar(img), verbose=0)[0]
     idx = int(np.argmax(prob))   # kelas dengan confidence terbesar
     conf = float(prob[idx])
 
