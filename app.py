@@ -45,7 +45,8 @@ def siapkan_gambar(img):
 st.set_page_config(page_title="Kerja Kelompok AI - Klasifikasi Jenis Bunga", page_icon="🌸")
 st.markdown(
     "<style>"
-    "header[data-testid='stHeader'], #MainMenu, div[data-testid='stToolbar'], "
+    ".stDeployButton, .stAppDeployButton, [data-testid='stDeployButton'], "
+    "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy'], "
     "[data-testid='stStatusWidget']"
     "{display:none !important;}"
     "</style>",
@@ -105,7 +106,8 @@ if img is None:
     st.info("Upload gambar dulu untuk melihat hasil prediksi.")
 else:
     st.image(img, use_container_width=True)
-    prob = model.predict(siapkan_gambar(img), verbose=0)[0]
+    with st.spinner("🌸 Memprediksi bunga..."):
+        prob = model.predict(siapkan_gambar(img), verbose=0)[0]
     idx = int(np.argmax(prob))   # kelas dengan confidence terbesar
     conf = float(prob[idx])
 
