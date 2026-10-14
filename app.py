@@ -45,9 +45,8 @@ def siapkan_gambar(img):
 st.set_page_config(page_title="Kerja Kelompok AI - Klasifikasi Jenis Bunga", page_icon="🌸")
 st.markdown(
     "<style>"
-    ".stDeployButton, .stAppDeployButton, [data-testid='stDeployButton'], "
-    "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy'], "
-    "[data-testid='stStatusWidget'], [data-testid='stStopButton'], [aria-label='Stop']"
+    "header[data-testid='stHeader'], #MainMenu, div[data-testid='stToolbar'], "
+    "[data-testid='stStatusWidget']"
     "{display:none !important;}"
     "</style>",
     unsafe_allow_html=True,
