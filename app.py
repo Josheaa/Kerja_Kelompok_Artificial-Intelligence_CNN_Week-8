@@ -46,7 +46,8 @@ st.set_page_config(page_title="Kerja Kelompok AI - Klasifikasi Jenis Bunga", pag
 st.markdown(
     "<style>"
     ".stDeployButton, .stAppDeployButton, [data-testid='stDeployButton'], "
-    "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy']"
+    "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy'], "
+    "[data-testid='stStatusWidget']"
     "{display:none !important;}"
     "</style>",
     unsafe_allow_html=True,
