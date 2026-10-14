@@ -47,7 +47,7 @@ st.markdown(
     "<style>"
     ".stDeployButton, .stAppDeployButton, [data-testid='stDeployButton'], "
     "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy'], "
-    "[data-testid='stStatusWidget']"
+    "[data-testid='stStatusWidget'], [data-testid='stStopButton'], [aria-label='Stop']"
     "{display:none !important;}"
     "</style>",
     unsafe_allow_html=True,
