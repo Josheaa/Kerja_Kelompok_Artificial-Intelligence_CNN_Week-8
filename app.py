@@ -84,8 +84,11 @@ st.success(
     "juga tersedia di folder Contoh_Sample_Gambar_Bunga."
 )
 
-# BAGIAN 8: pilih sumber gambar (upload sendiri atau contoh yang tersedia)
-sumber = st.radio("Sumber gambar:", ["Upload", "Contoh_Sample_Gambar_Bunga"], horizontal=True)
+# BAGIAN 8: pilih sumber gambar (contoh disembunyikan jika foldernya tidak ada, mis. di hosting)
+pilihan_sumber = ["Upload"]
+if CONTOH_DIR.is_dir() and any(CONTOH_DIR.iterdir()):
+    pilihan_sumber.append("Contoh_Sample_Gambar_Bunga")
+sumber = st.radio("Sumber gambar:", pilihan_sumber, horizontal=True)
 img = None
 if sumber == "Upload":
     f = st.file_uploader("Upload gambar bunga", type=["jpg", "jpeg", "png"])
