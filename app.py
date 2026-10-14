@@ -45,9 +45,8 @@ def siapkan_gambar(img):
 st.set_page_config(page_title="Kerja Kelompok AI - Klasifikasi Jenis Bunga", page_icon="🌸")
 st.markdown(
     "<style>"
-    ".stDeployButton, .stAppDeployButton, [data-testid='stDeployButton'], "
-    "[data-testid='stAppDeployButton'], button[title='Deploy'], [aria-label='Deploy'], "
-    "[data-testid='stStatusWidget'], [data-testid='stStopButton'], [aria-label='Stop']"
+    "header[data-testid='stHeader'], #MainMenu, div[data-testid='stToolbar'], "
+    "[data-testid='stStatusWidget']"
     "{display:none !important;}"
     "</style>",
     unsafe_allow_html=True,
@@ -125,3 +124,12 @@ else:
         kolom_nama, kolom_bar = st.columns([1, 4])
         kolom_nama.write(nama)
         kolom_bar.progress(float(nilai), text=f"{float(nilai) * 100:.2f}%")
+
+# BAGIAN 10: menu bawah pengganti navbar (muat ulang / bersihkan cache)
+st.divider()
+with st.expander("⋮ Menu"):
+    if st.button("Muat ulang aplikasi"):
+        st.rerun()
+    if st.button("Bersihkan cache model"):
+        st.cache_resource.clear()
+        st.rerun()
