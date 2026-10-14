@@ -125,11 +125,3 @@ else:
         kolom_nama.write(nama)
         kolom_bar.progress(float(nilai), text=f"{float(nilai) * 100:.2f}%")
 
-# BAGIAN 10: menu bawah pengganti navbar (muat ulang / bersihkan cache)
-st.divider()
-with st.expander("⋮ Menu"):
-    if st.button("Muat ulang aplikasi"):
-        st.rerun()
-    if st.button("Bersihkan cache model"):
-        st.cache_resource.clear()
-        st.rerun()
