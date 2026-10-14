@@ -41,7 +41,7 @@ def siapkan_gambar(img):
     return np.expand_dims(np.array(img), axis=0).astype("float32")
 
 
-# BAGIAN 5: tampilan judul (tombol Deploy bawaan disembunyikan)
+# BAGIAN 5: judul + sembunyikan tombol Deploy dan ikon loading bawaan Streamlit
 st.set_page_config(page_title="Kerja Kelompok AI - Klasifikasi Jenis Bunga", page_icon="🌸")
 st.markdown(
     "<style>"
