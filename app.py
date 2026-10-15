@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import streamlit as st
 import tensorflow as tf
-from PIL import Image
+from PIL import Image, ImageOps
 
 # BAGIAN 2: lokasi file dan ukuran gambar (sama seperti saat training)
 BASE_DIR = Path(__file__).parent          # folder tempat app.py berada
@@ -37,6 +37,7 @@ def load_model_dan_kelas():
 
 # BAGIAN 4: siapkan gambar sebelum diprediksi (resize saja, tanpa preprocess ganda)
 def siapkan_gambar(img):
+    img = ImageOps.exif_transpose(img)  # betulkan rotasi foto HP
     img = img.convert("RGB").resize(IMG_SIZE)
     return np.expand_dims(np.array(img), axis=0).astype("float32")
 
