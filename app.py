@@ -87,10 +87,11 @@ st.success(
 
 # BAGIAN 8: pilih sumber gambar (contoh disembunyikan jika foldernya tidak ada, mis. di hosting)
 EKSTENSI_GAMBAR = (".jpg", ".jpeg", ".png")  # hanya file gambar yang ditampilkan
-daftar_contoh = sorted(
-    f for f in os.listdir(CONTOH_DIR)
-    if CONTOH_DIR.is_dir() and f.lower().endswith(EKSTENSI_GAMBAR)
-) if CONTOH_DIR.is_dir() else []
+daftar_contoh = []
+if CONTOH_DIR.is_dir():
+    for nama_file in sorted(os.listdir(CONTOH_DIR)):
+        if nama_file.lower().endswith(EKSTENSI_GAMBAR):
+            daftar_contoh.append(nama_file)
 pilihan_sumber = ["Upload"]
 if daftar_contoh:
     pilihan_sumber.append("Contoh_Sample_Gambar_Bunga")
@@ -111,7 +112,7 @@ else:
 if img is None:
     st.info("Upload gambar dulu untuk melihat hasil prediksi.")
 else:
-    st.image(img, use_container_width=True)
+    st.image(img, use_container_width=True)  # use_container_width: warning depresiasi saja, tetap jalan
     with st.spinner("🌸 Memprediksi bunga..."):
         prob = model.predict(siapkan_gambar(img), verbose=0)[0]
     idx = int(np.argmax(prob))   # kelas dengan confidence terbesar
