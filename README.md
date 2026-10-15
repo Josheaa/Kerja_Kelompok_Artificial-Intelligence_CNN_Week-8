@@ -1,7 +1,7 @@
 # Klasifikasi Jenis Bunga dengan CNN (Tugas Kelompok 2 - Week 8)
 
 Aplikasi web (Streamlit) untuk memprediksi jenis bunga dari gambar.
-Model: MobileNetV2 (transfer learning) + BatchNormalization + Dropout, hasil hyperparameter tuning.
+Model: MobileNetV2 (transfer learning) + BatchNormalization + Dropout, hasil hyperparameter tuning (8 konfigurasi) + fine-tuning.
 
 Kelas: "daisy", "dandelion", "roses", "sunflowers", "tulips"
 
@@ -11,7 +11,8 @@ Kelas: "daisy", "dandelion", "roses", "sunflowers", "tulips"
 - `model_cnn.keras`: HASIL training dari Colab (wajib ada sejajar `app.py`)
 - `kelas.json`: daftar kelas
 - `Contoh_Sample_Gambar_Bunga/`: gambar untuk testing/demo (termasuk `anggrek_tebu_*` sebagai uji OOD)
-- `kurva_training.png`, `confusion_matrix.png`: grafik untuk laporan
+- `kurva_training.png`, `confusion_matrix.png`, `confusion_matrix_baseline.png`: grafik untuk laporan
+- `hasil_uji_gambar_baru.csv`: hasil uji gambar baru dari Colab (dibuat saat cell uji dijalankan)
 
 ## A. Training di Google Colab (T4 GPU)
 1. Upload `Praktikum Kelompok_Artificial Intelligence_LEC_Week 8.ipynb` ke Colab, `Runtime > Run all`.

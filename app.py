@@ -86,8 +86,13 @@ st.success(
 )
 
 # BAGIAN 8: pilih sumber gambar (contoh disembunyikan jika foldernya tidak ada, mis. di hosting)
+EKSTENSI_GAMBAR = (".jpg", ".jpeg", ".png")  # hanya file gambar yang ditampilkan
+daftar_contoh = sorted(
+    f for f in os.listdir(CONTOH_DIR)
+    if CONTOH_DIR.is_dir() and f.lower().endswith(EKSTENSI_GAMBAR)
+) if CONTOH_DIR.is_dir() else []
 pilihan_sumber = ["Upload"]
-if CONTOH_DIR.is_dir() and any(CONTOH_DIR.iterdir()):
+if daftar_contoh:
     pilihan_sumber.append("Contoh_Sample_Gambar_Bunga")
 sumber = st.radio("Sumber gambar:", pilihan_sumber, horizontal=True)
 img = None
@@ -98,7 +103,7 @@ if sumber == "Upload":
 else:
     contoh = st.selectbox(
         "Pilih contoh (folder Contoh_Sample_Gambar_Bunga):",
-        sorted(os.listdir(CONTOH_DIR)),
+        daftar_contoh,
     )
     img = Image.open(CONTOH_DIR / contoh)
 
