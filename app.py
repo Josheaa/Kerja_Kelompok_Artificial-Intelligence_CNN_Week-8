@@ -101,7 +101,7 @@ if sumber == "Upload":
     if f is not None:
         img = ImageOps.exif_transpose(Image.open(f))  # betulkan rotasi foto HP
 else:
-    contoh = st.selectbox(
+    contoh = st.radio(
         "Pilih contoh (folder Contoh_Sample_Gambar_Bunga):",
         daftar_contoh,
     )
