@@ -131,5 +131,6 @@ else:
     for nama, nilai in sorted(zip(kelas, prob), key=lambda x: -x[1]):
         kolom_nama, kolom_bar = st.columns([1, 4])
         kolom_nama.write(nama)
-        kolom_bar.progress(float(nilai), text=f"{float(nilai) * 100:.2f}%")
+        nilai_aman = min(1.0, max(0.0, float(nilai)))  # progress wajib 0-1
+        kolom_bar.progress(nilai_aman, text=f"{float(nilai) * 100:.2f}%")
 
