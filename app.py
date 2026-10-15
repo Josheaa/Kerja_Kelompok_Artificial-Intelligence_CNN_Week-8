@@ -37,7 +37,6 @@ def load_model_dan_kelas():
 
 # BAGIAN 4: siapkan gambar sebelum diprediksi (resize saja, tanpa preprocess ganda)
 def siapkan_gambar(img):
-    img = ImageOps.exif_transpose(img)  # betulkan rotasi foto HP
     img = img.convert("RGB").resize(IMG_SIZE)
     return np.expand_dims(np.array(img), axis=0).astype("float32")
 
@@ -100,13 +99,13 @@ img = None
 if sumber == "Upload":
     f = st.file_uploader("Upload gambar bunga", type=["jpg", "jpeg", "png"])
     if f is not None:
-        img = Image.open(f)
+        img = ImageOps.exif_transpose(Image.open(f))  # betulkan rotasi foto HP
 else:
     contoh = st.selectbox(
         "Pilih contoh (folder Contoh_Sample_Gambar_Bunga):",
         daftar_contoh,
     )
-    img = Image.open(CONTOH_DIR / contoh)
+    img = ImageOps.exif_transpose(Image.open(CONTOH_DIR / contoh))
 
 # BAGIAN 9: prediksi dan tampilkan hasil
 if img is None:
