@@ -80,7 +80,8 @@ st.success(
     "untuk setiap kelas.  \n"
     "4. Jika nilai confidence di bawah 75%, hasilnya ditampilkan sebagai Unidentified. Hal ini menunjukkan "
     "bahwa model belum cukup yakin dengan prediksinya, misalnya ketika gambar bunga tidak termasuk dalam dataset.  \n"
-    "5. Aplikasi menggunakan model yang disimpan dalam file model_cnn.keras. Untuk pengujian, beberapa gambar "
+    "5. Aplikasi menggunakan model yang disimpan dalam file model_cnn.keras. Val akurasi final 89,37% "
+    "(baseline 88,42%). Untuk pengujian, beberapa gambar "
     "juga tersedia di folder Contoh_Sample_Gambar_Bunga."
 )
 
