@@ -1,0 +1,19 @@
+file,label_asli,prediksi,confidence_%,hasil
+daisy_1.jpg,daisy,daisy,100.0,BENAR
+daisy_2.jpg,daisy,daisy,100.0,BENAR
+daisy_3.jpg,daisy,daisy,100.0,BENAR
+dandelion_1.jpg,dandelion,dandelion,100.0,BENAR
+dandelion_2.jpg,dandelion,dandelion,100.0,BENAR
+dandelion_3.jpg,dandelion,dandelion,100.0,BENAR
+ood_anggrek_emas_1.jpg,di-luar-dataset,tulips,54.41,Unidentified (sesuai harapan)
+ood_anggrek_monyet_1.jpg,di-luar-dataset,roses,55.76,Unidentified (sesuai harapan)
+ood_anggrek_tebu_1.jpg,di-luar-dataset,sunflowers,55.81,Unidentified (sesuai harapan)
+roses_1.jpg,roses,roses,73.96,BENAR
+roses_2.jpg,roses,roses,99.99,BENAR
+roses_3.jpg,roses,roses,99.95,BENAR
+sunflowers_1.jpg,sunflowers,sunflowers,100.0,BENAR
+sunflowers_2.jpg,sunflowers,sunflowers,100.0,BENAR
+sunflowers_3.jpg,sunflowers,sunflowers,99.95,BENAR
+tulips_1.jpg,tulips,tulips,99.98,BENAR
+tulips_2.jpg,tulips,tulips,100.0,BENAR
+tulips_3.jpg,tulips,tulips,99.22,BENAR
